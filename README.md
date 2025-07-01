@@ -1,88 +1,115 @@
-# Deep-Learning
-Perceptron Programming, Neural Network Training, and Convolutional Neural Network.
+# 🧠 Deep Learning Projects
 
+This repository contains implementations of three core deep learning tasks:  
+1. Perceptron Programming  
+2. Feedforward Neural Network Training  
+3. Convolutional Neural Network (CNN) for Face Recognition  
 
-Perceptron Programming:
+Each task demonstrates key learning outcomes from basic supervised learning algorithms to real-world applications in image-based recognition systems.
 
-Write a Python code that shows the action of the perceptron algorithm for the given dataset at
-the end of this assignment. Start with an initial set of weights W = (0,0,0) and bias = 0. Use the
-following different learning rates:
-1- η = 0.1.
-2- η = 0.2.
-3- η = 0.3.
+---
 
+## 📘 Table of Contents
 
-About Dataset
-We have chosen a simple numpy array to implement the single layer perceptron algorithm. We
-have considered a total of 13 samples with three features and one class label. The class label is
-defined in binary 0 and 1. The training dataset contains eight data samples, while the validation
-dataset contains five.
+- [1. Perceptron Programming](#1-perceptron-programming)
+- [2. Neural Network Training](#2-neural-network-training)
+- [3. Convolutional Neural Network (CNN)](#3-convolutional-neural-network-cnn)
+- [4. Deliverables](#4-deliverables)
+- [5. Contact](#5-contact)
 
+---
 
-train_data = np.array([ 
-                     [1.00, 0.08, 0.72, 1.0],
-                     [1.00, 0.10, 1.00, 1.0],
-                     [1.00, 0.26, 0.58, 1.0],
-                     [1.00, 0.35, 0.95, 0.0],
-                     [1.00, 0.45, 0.15, 1.0],
-                     [1.00, 0.60, 0.30, 1.0],
-                     [1.00, 0.70, 0.65, 0.0],
-                     [1.00, 0.92, 0.45, 0.0] 
-])
+## 1. 📌 Perceptron Programming
 
+### 📝 Description
 
-test_data = np.array([
-                    [1.00, 0.42, 0.85, 0.0],
-                    [1.00, 0.65, 0.55, 0.0],
-                    [1.00, 0.20, 0.30, 1.0],
-                    [1.00, 0.20, 1.00, 0.0],
-                    [1.00, 0.85, 0.10, 1.0]
-])
+A Python implementation of the **single-layer perceptron algorithm** using a small dataset of 13 samples with 3 features each. The goal is to classify binary outcomes based on input features using different learning rates.
 
+### 📊 Dataset
 
+- `train_data`: 8 samples  
+- `test_data`: 5 samples  
+- Each sample: `[bias_term, feature1, feature2, label]`
 
-Neural Network Training:
+### ⚙️ Objectives
 
-Write a Python code that simulates the following neural network architecture. The given
-architecture has three inputs (x1, x2, x3), one hidden layer consists of two neurons, and one
-output layer. Assume that all neurons are using Sigmoid activation function. The loss function
-(Error function) is square error (t
-k – o
-k
-)
-2
-.
-You need to train the given neural network, and update the weights using Stochastic Gradient
-Descent approach. During each example training, the weights should be updated.
-Assume the initial weights and biases values are the following:
-W1= 0.2 W2= -0.3 W3= 0.4 W4= 0.1
-W5= -0.5 W6= 0.2 W7= -0.3 W8= -0.2
-b1= -0.4 b2= 0.2 b3= 0.1
-After training the model for 20 epochs, Draw the loss amount after each epoch.
+- Start with weights `W = [0, 0, 0]` and bias = 0
+- Train using three different learning rates:
+  - η = 0.1  
+  - η = 0.2  
+  - η = 0.3
+- Evaluate the final weights and classification accuracy
 
+---
 
-About Dataset
-Use the attached csv file “moonDataset.csv”. The dataset has 200 examples of different values
-of the inputs x1, x2, x3. There are two labels (0/1) for the entire dataset. The inputs and labels are
-shown in the attached csv file.
+## 2. 🔁 Neural Network Training
 
+### 📝 Description
 
- Convolutional Neural Network:
+A manually implemented feedforward **neural network** with:
+- 3 input features: x1, x2, x3  
+- 1 hidden layer with 2 neurons  
+- 1 output neuron  
+- Activation function: **Sigmoid**  
+- Loss function: **Mean Squared Error (MSE)**  
+- Training method: **Stochastic Gradient Descent (SGD)**
 
- Convolutional neural network (CNN) is a regularized type of feed-forward neural network that
-learns feature engineering by itself via filters (or kernel) optimization. Vanishing gradients and
-exploding gradients, seen during backpropagation in earlier neural networks, are prevented by
-using regularized weights over fewer connections.
-Extensive research is recorded for face recognition using CNNs, which is a key aspect of
-surveillance applications. In most recent times, the Face Recognition technique is widely used in
-University automation systems, Smart Entry management systems, etc. In this paper, a novel
-CNN architecture for face recognition system is proposed including the process of collecting face
-data of students. Experimentally it is shown that the proposed CNN architecture provides 99%
-accuracy. Further, the proposed CNN framework is used to develop a “Smart Attendance
-Management System (SAMS)“, which is a web-based application, to provide attendance of
-students using face recognition, in real time. The proposed application is easy to deploy and
-maintain.
-In this project you need to build a face recognition system using CNN in Python. You can take a
-look on any available source code available. The submitted code should include trained model
-and test cases. It is preferable to customize the project to the class students, so you can recognize
-them immediately.
+### 🔢 Initial Parameters
+
+- Weights:  
+  `W1=0.2, W2=-0.3, W3=0.4, W4=0.1, W5=-0.5, W6=0.2, W7=-0.3, W8=-0.2`  
+- Biases:  
+  `b1=-0.4, b2=0.2, b3=0.1`
+
+### 📊 Dataset
+
+- **moonDataset.csv**  
+- 200 samples with 3 input features and binary labels (0 or 1)
+
+### 📈 Output
+
+- Model trains for **20 epochs**
+- A loss curve is plotted to visualize performance over time
+
+---
+
+## 3. 🧠 Convolutional Neural Network (CNN)
+
+### 📝 Description
+
+Build a CNN-based **Face Recognition System** that can:
+- Collect and preprocess facial image data
+- Train a CNN model for face classification
+- Test the model on new face images
+- Recognize student faces for smart attendance
+
+### 📦 Features
+
+- Deep CNN architecture for robust face embedding
+- Real-time student identification and attendance logging
+- Ready-to-deploy backend (optional: Flask, FastAPI, or web interface)
+
+### 🎯 Applications
+
+- Smart Attendance Management System (SAMS)
+- University automation and surveillance
+
+---
+
+## 4. 📦 Deliverables
+
+### ✅ Perceptron Programming
+- `perceptron.py`
+- Accuracy results for each learning rate
+- Table of weight updates
+
+### ✅ Neural Network Training
+- `neural_network.py`
+- Plot of loss vs. epochs
+- Weight updates after training
+
+### ✅ CNN for Face Recognition
+- `cnn_model.py`
+- Preprocessed face data
+- Trained model file
+- Test results and performance report
