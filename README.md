@@ -15,7 +15,6 @@ Each task demonstrates key learning outcomes from basic supervised learning algo
 - [2. Neural Network Training](#2-neural-network-training)
 - [3. Convolutional Neural Network (CNN)](#3-convolutional-neural-network-cnn)
 - [4. Deliverables](#4-deliverables)
-- [5. Contact](#5-contact)
 
 ---
 
